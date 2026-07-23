@@ -229,6 +229,12 @@
       letter-spacing: .04em;
     }
     .hero-kicker::before { content: ""; width: 34px; height: 2px; background: var(--secondary); }
+    @media (max-width: 640px) {
+      .hero-kicker {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
     .hero-kicker span { color: var(--secondary); }
     .hero h1 {
       max-width: 760px;
@@ -241,6 +247,11 @@
       position: relative;
       color: var(--accent-dark);
       white-space: nowrap;
+    }
+    @media (max-width: 640px) {
+      .hero-highlight {
+        white-space: normal;
+      }
     }
     .hero-highlight::after {
       content: "";
