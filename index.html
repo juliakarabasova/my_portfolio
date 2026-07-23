@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Юлия Карабасова — Frontend Developer</title>
+  <link
+    rel="icon"
+    href="assets/images/resume-icon.svg"
+    type="image/svg+xml"
+  >
+
+  <meta name="description" content="Frontend Developer: React, TypeScript, full-cycle SPA development. Корпоративные системы, контентные платформы, Telegram и VK Mini Apps.">
+  <meta name="keywords" content="Frontend Developer, React, TypeScript, SPA, Redux Toolkit, RTK Query, Telegram Mini Apps, VK Mini Apps">
+  <meta property="og:title" content="Юлия Карабасова — Frontend Developer">
+  <meta property="og:description" content="React / TypeScript · Full-cycle SPA Development">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#5664b3">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <style>
+    :root {
+      --bg: #f7f7fb;
+      --surface: #ffffff;
+      --surface-soft: #f0f2f8;
+      --text: #1c2230;
+      --muted: #687084;
+      --line: #dfe3ec;
+      --accent: #5664b3;
+      --accent-dark: #39467f;
+      --accent-soft: #eceeff;
+      --secondary: #b56d72;
+      --secondary-soft: #f7e8e7;
+      --sage: #64877f;
+      --sage-soft: #e8f1ef;
+      --warm: #c78f52;
+      --warm-soft: #fbf0e2;
+      --success: #64877f;
+      --shadow: 0 20px 58px rgba(43, 49, 92, 0.10);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --content: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid rgba(63, 95, 125, 0.35); outline-offset: 3px; }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 9999;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--text);
+      color: #fff;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .side-nav {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 86px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 14px;
+      pointer-events: none;
+    }
+    .nav-inner {
+      pointer-events: auto;
+      display: grid;
+      gap: 8px;
+      padding: 6px;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(219,227,236,.9);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .nav-link {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+      transition: .2s ease;
+      position: relative;
+    }
+    .nav-link:hover, .nav-link.active { background: var(--accent); color: #fff; }
+    .nav-link span {
+      position: absolute;
+      left: 58px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      background: var(--text);
+      color: #fff;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(-6px);
+      pointer-events: none;
+      transition: .2s ease;
+    }
+    .nav-link:hover span, .nav-link:focus-visible span { opacity: 1; transform: translateX(0); }
+
+    .menu-button {
+      display: none;
+      position: fixed;
+      right: 18px;
+      top: 18px;
+      z-index: 1200;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.95);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      font-size: 21px;
+      cursor: pointer;
+    }
+
+    main { overflow: hidden; }
+    .section { padding: 100px 28px; }
+    .container { width: min(var(--content), 100%); margin: 0 auto; }
+    .section-heading { max-width: 780px; margin-bottom: 44px; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 900px;
+      margin-bottom: 22px;
+      font-size: clamp(44px, 7vw, 84px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    h2 {
+      margin-bottom: 14px;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    h3 { font-size: 22px; line-height: 1.25; letter-spacing: -.015em; }
+    .lead { max-width: 760px; color: var(--muted); font-size: clamp(18px, 2vw, 23px); }
+    .muted { color: var(--muted); }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(86,100,179,.20), transparent 29%),
+        radial-gradient(circle at 94% 72%, rgba(181,109,114,.15), transparent 23%),
+        radial-gradient(circle at 15% 90%, rgba(100,135,127,.13), transparent 25%),
+        linear-gradient(145deg, #fbfbfe 0%, #f3f3fa 58%, #f8f1f2 100%);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      right: -190px;
+      top: -210px;
+      border: 1px solid rgba(86,100,179,.16);
+      border-radius: 50%;
+      box-shadow: 0 0 0 78px rgba(86,100,179,.035), 0 0 0 154px rgba(181,109,114,.025);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .28;
+      background-image:
+        linear-gradient(rgba(86,100,179,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(86,100,179,.07) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.76), transparent 92%);
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 2.08fr) minmax(390px, .92fr);
+      gap: clamp(48px, 7vw, 92px);
+      align-items: center;
+    }
+    .hero-copy { max-width: 720px; }
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 820;
+      letter-spacing: .04em;
+    }
+    .hero-kicker::before { content: ""; width: 34px; height: 2px; background: var(--secondary); }
+    .hero-kicker span { color: var(--secondary); }
+    .hero h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(46px, 6.3vw, 74px);
+      line-height: 1.01;
+      letter-spacing: -.058em;
+    }
+    .hero-highlight {
+      position: relative;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+    .hero-highlight::after {
+      content: "";
+      position: absolute;
+      left: -2px;
+      right: -4px;
+      bottom: .08em;
+      height: .18em;
+      z-index: -1;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(181,109,114,.35), rgba(199,143,82,.28));
+    }
+    .hero-description { max-width: 720px; margin-bottom: 31px; color: #50596e; font-size: clamp(18px, 1.8vw, 20px); }
+    .hero-description strong { color: var(--text); font-weight: 760; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--accent);
+      font-weight: 750;
+      transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--accent); color: #fff; box-shadow: 0 12px 28px rgba(86,100,179,.24); }
+    .button-primary:hover { background: var(--accent-dark); box-shadow: 0 15px 34px rgba(57,70,127,.26); }
+    .button-secondary { background: rgba(255,255,255,.76); color: var(--accent-dark); }
+    .button-secondary:hover { background: #fff; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
+    .hero-meta span {
+      padding: 8px 11px;
+      border: 1px solid rgba(86,100,179,.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,.62);
+      color: #596176;
+      font-size: 13px;
+      font-weight: 680;
+      backdrop-filter: blur(8px);
+    }
+    .hero-showcase {
+      position: relative;
+      min-height: 540px;
+      display: grid;
+      place-items: center;
+    }
+    .showcase-glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(86,100,179,.18), rgba(181,109,114,.07) 48%, transparent 70%);
+      filter: blur(2px);
+    }
+    .product-window {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 520px);
+      overflow: hidden;
+      border: 1px solid rgba(57,70,127,.16);
+      border-radius: 24px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 32px 86px rgba(43,49,92,.20);
+      transform: rotate(1.4deg);
+      backdrop-filter: blur(16px);
+    }
+    .product-bar { height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; background: #f2f3f9; border-bottom: 1px solid var(--line); }
+    .product-dots { display: flex; gap: 6px; }
+    .product-dots i { width: 8px; height: 8px; border-radius: 50%; background: #b7bdcc; }
+    .product-label { color: #7a8192; font-size: 11px; font-weight: 750; letter-spacing: .06em; }
+    .product-body { display: grid; grid-template-columns: 76px 1fr; min-height: 365px; }
+    .product-sidebar { padding: 18px 12px; background: #333e76; display: grid; align-content: start; gap: 12px; }
+    .side-logo { width: 34px; height: 34px; margin: 0 auto 8px; border-radius: 11px; background: linear-gradient(135deg, #f1b89d, #d88772); }
+    .side-line { height: 9px; border-radius: 6px; background: rgba(255,255,255,.21); }
+    .side-line.active { background: rgba(255,255,255,.82); }
+    .product-main { padding: 24px; }
+    .product-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .product-heading strong { font-size: 17px; }
+    .product-avatar { width: 31px; height: 31px; border-radius: 50%; background: var(--secondary-soft); border: 5px solid #fff; box-shadow: 0 0 0 1px #e2d0d1; }
+    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 22px; }
+    .product-card-mini { min-height: 104px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .product-card-mini.wide { grid-column: 1 / -1; min-height: 122px; }
+    .mini-tag { display: inline-block; width: 52px; height: 8px; margin-bottom: 14px; border-radius: 999px; background: var(--accent-soft); }
+    .mini-tag.rose { background: var(--secondary-soft); }
+    .mini-tag.sage { background: var(--sage-soft); }
+    .mini-line { height: 8px; margin-top: 8px; border-radius: 999px; background: #e8eaf0; }
+    .mini-line.short { width: 58%; }
+    .mini-chart { height: 50px; margin-top: 14px; display: flex; align-items: end; gap: 6px; }
+    .mini-chart i { flex: 1; border-radius: 5px 5px 2px 2px; background: linear-gradient(180deg, #7a85c8, #5664b3); }
+    .mini-chart i:nth-child(2) { height: 65%; background: linear-gradient(180deg, #d49a9d, #b56d72); }
+    .mini-chart i:nth-child(3) { height: 88%; }
+    .mini-chart i:nth-child(4) { height: 48%; background: linear-gradient(180deg, #83aaa1, #64877f); }
+    .mini-chart i:nth-child(5) { height: 76%; }
+    .floating-proof {
+      position: absolute;
+      z-index: 4;
+      min-width: 155px;
+      padding: 14px 16px;
+      border: 1px solid rgba(57,70,127,.14);
+      border-radius: 15px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 16px 38px rgba(43,49,92,.14);
+      backdrop-filter: blur(12px);
+    }
+    .floating-proof strong { display: block; color: var(--accent-dark); font-size: 22px; line-height: 1.05; }
+    .floating-proof span { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; font-weight: 680; }
+    .proof-a { left: -20px; top: 70px; transform: rotate(-4deg); }
+    .proof-b { right: -4px; bottom: 48px; transform: rotate(3deg); }
+    .proof-c { left: 30px; bottom: 8px; border-color: rgba(100,135,127,.22); }
+
+    .about-grid { display: grid; grid-template-columns: .8fr 1.5fr; gap: 56px; align-items: center; }
+    .portrait-card {
+      aspect-ratio: 4 / 5;
+      position: sticky;
+      top: 32px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, #dfe8ef, #f8fafc 60%, #cad8e3);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .portrait-note { position: absolute; left: 18px; right: 18px; bottom: 18px; padding: 11px 14px; border-radius: 11px; background: rgba(255,255,255,.82); color: var(--muted); font-size: 12px; backdrop-filter: blur(10px); }
+    .about-copy p { font-size: 18px; color: #4b5b6c; }
+    .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
+    .fact { padding: 17px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+    .fact strong { display: block; margin-bottom: 3px; font-size: 14px; }
+    .fact span { color: var(--muted); font-size: 14px; }
+
+    .stats { padding-top: 0; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .stat-card { padding: 28px; border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--surface); box-shadow: 0 10px 34px rgba(31,51,73,.045); }
+    .stat-value { display: block; color: var(--accent-dark); font-size: 38px; font-weight: 850; line-height: 1; letter-spacing: -.04em; }
+    .stat-label { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; }
+
+    .soft-section { background: var(--surface-soft); border-block: 1px solid var(--line); }
+    .skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .skill-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius-md); background: rgba(255,255,255,.84); }
+    .skill-card h3 { margin-bottom: 18px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 7px 11px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-dark); font-size: 13px; font-weight: 650; }
+    .chip.secondary { background: #eef1f4; color: #4f5f70; }
+
+    .timeline { position: relative; display: grid; gap: 26px; }
+    .timeline::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+    .timeline-item { position: relative; padding-left: 42px; }
+    .timeline-item::before { content: ""; position: absolute; left: 2px; top: 8px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 4px solid var(--bg); box-shadow: 0 0 0 1px var(--accent); }
+    .timeline-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+    .timeline-header { display: flex; justify-content: space-between; gap: 20px; align-items: start; margin-bottom: 14px; }
+    .timeline-header h3 { margin-bottom: 5px; }
+    .period { white-space: nowrap; color: var(--accent-dark); font-size: 14px; font-weight: 750; }
+    .bullet-list { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .bullet-list li { position: relative; padding-left: 20px; color: #4e6072; }
+    .bullet-list li::before { content: ""; position: absolute; left: 0; top: .72em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+    .projects-grid { display: grid; gap: 22px; }
+    .project-card {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .project-card:nth-child(2) .project-visual { background: linear-gradient(145deg, var(--sage-soft), #f7faf9); }
+    .project-card:nth-child(3) .project-visual { background: linear-gradient(145deg, var(--secondary-soft), #fcf8f7); }
+    .project-card:nth-child(2) .project-index { color: rgba(100,135,127,.30); }
+    .project-card:nth-child(3) .project-index { color: rgba(181,109,114,.28); }
+
+    .project-visual {
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding: 32px;
+      background: linear-gradient(145deg, #e7eef4, #f7f9fb);
+      border-right: 1px solid var(--line);
+    }
+    .mock-window { width: 104%; overflow: hidden; border: 1px solid rgba(40,69,95,.18); border-radius: 14px; background: #fff; box-shadow: 0 22px 50px rgba(40,69,95,.13); }
+    .mock-bar { height: 32px; display: flex; align-items: center; gap: 6px; padding: 0 12px; background: #edf2f6; border-bottom: 1px solid #d9e1e8; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #a6b6c4; }
+    .mock-body { padding: 20px; }
+    .mock-title { width: 48%; height: 14px; border-radius: 5px; background: #b8c6d1; }
+    .mock-subtitle { width: 72%; height: 8px; margin-top: 9px; border-radius: 5px; background: #d9e1e8; }
+    .mock-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
+    .mock-block { min-height: 72px; border-radius: 9px; background: #eef3f7; border: 1px solid #dfe7ed; }
+    .mock-block.tall { min-height: 150px; }
+    .project-index { position: absolute; right: 22px; top: 17px; color: rgba(40,69,95,.28); font-weight: 850; font-size: 54px; line-height: 1; }
+    .project-content { padding: 38px; }
+    .project-content h3 { margin-bottom: 12px; font-size: 29px; }
+    .project-meta { margin-bottom: 18px; color: var(--accent); font-size: 14px; font-weight: 750; }
+    .project-impact { margin: 24px 0; padding: 18px; border-left: 3px solid var(--success); background: #f2f7f3; color: #3f5948; border-radius: 0 10px 10px 0; }
+    .project-link { display: inline-flex; margin-top: 10px; color: var(--accent-dark); font-weight: 800; }
+    .project-link:hover { text-decoration: underline; }
+
+    .value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .value-card { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+    .value-number { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 18px; border-radius: 12px; background: var(--accent-soft); color: var(--accent-dark); font-weight: 850; }
+    .value-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+
+    .contact-section {
+      padding-bottom: 72px;
+    }
+
+    .contact-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 32px;
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(91, 86, 210, 0.12),
+          transparent 38%
+        ),
+        rgba(255, 255, 255, 0.82);
+
+      border: 1px solid rgba(24, 28, 44, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(31, 36, 64, 0.08);
+    }
+
+    .contact-wrap h2 {
+      max-width: 720px;
+      margin: 12px auto 18px;
+    }
+
+    .contact-wrap .lead {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 58px;
+      height: 58px;
+
+      border-radius: 50%;
+
+      color: #ffffff;
+      background: linear-gradient(135deg, #303b78, #5664b3 58%, #8f6575);
+      border-color: var(--accent-color, #5b56d2);
+
+      box-shadow: 0 10px 30px rgba(31, 36, 64, 0.08);
+
+      font-size: 24px;
+      text-decoration: none;
+
+      transition:
+        transform 180ms ease,
+        color 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .social-link:hover {
+      color: var(--heading-color, #25273d);
+      background: #ffffff;
+
+      border: 1px solid rgba(37, 39, 61, 0.12);
+
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(91, 86, 210, 0.24);
+    }
+
+    .social-link:focus-visible {
+      outline: 3px solid rgba(91, 86, 210, 0.3);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 640px) {
+      .contact-wrap {
+        padding: 48px 22px;
+        border-radius: 22px;
+      }
+
+      .social-link {
+        width: 54px;
+        height: 54px;
+        font-size: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .social-link {
+        transition: none;
+      }
+
+      .social-link:hover {
+        transform: none;
+      }
+    }
+
+    footer { padding: 32px 28px 46px; color: var(--muted); text-align: center; font-size: 13px; }
+    footer a { text-decoration: underline; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 980px) {
+      .side-nav { width: auto; inset: 0; padding: 0; justify-content: flex-start; background: rgba(248,250,252,.96); transform: translateY(-110%); transition: transform .25s ease; }
+      .side-nav.open { transform: translateY(0); }
+      .nav-inner { margin: 76px 18px 18px; display: grid; grid-template-columns: repeat(3, 1fr); width: calc(100% - 36px); }
+      .nav-link { width: 100%; height: 48px; }
+      .nav-link span { position: static; display: inline; opacity: 1; transform: none; padding: 0; margin-left: 8px; background: transparent; color: inherit; font-size: 13px; }
+      .menu-button { display: block; }
+      .hero-grid { grid-template-columns: 1fr; padding-left: 0; padding-top: 74px; }
+      .hero-copy { max-width: 800px; }
+      .hero-showcase { min-height: 500px; width: min(100%, 620px); margin: 0 auto; }
+      .about-grid, .project-card { grid-template-columns: 1fr; }
+      .portrait-card { max-width: 440px; position: relative; top: auto; }
+      .project-visual { border-right: 0; border-bottom: 1px solid var(--line); }
+      .stat-grid, .value-grid, .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      .section { padding: 76px 18px; }
+      .hero { min-height: auto; padding-top: 96px; padding-bottom: 72px; }
+      .hero-grid { padding-top: 40px; gap: 38px; }
+      .hero-showcase { min-height: 420px; }
+      .product-window { transform: none; }
+      .floating-proof { min-width: 132px; padding: 11px 13px; }
+      .proof-a { left: -4px; top: 42px; }
+      .proof-b { right: -3px; bottom: 28px; }
+      .proof-c { display: none; }
+      h1 { font-size: 46px; }
+      .facts, .stat-grid, .skill-groups, .value-grid, .education-grid, .contact-grid { grid-template-columns: 1fr; }
+      .timeline-header { flex-direction: column; gap: 5px; }
+      .period { white-space: normal; }
+      .project-content, .contact-wrap { padding: 26px; }
+      .project-visual { min-height: 280px; padding: 24px; }
+      .nav-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      .side-nav, .menu-button, .actions, footer { display: none !important; }
+      .section { padding: 32px 0; }
+      body { background: #fff; }
+      .hero { min-height: auto; background: #fff; }
+      .project-card, .timeline-card, .stat-card, .skill-card, .education-card { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <button class="menu-button" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Открыть меню">☰</button>
+
+  <header class="side-nav" id="site-navigation">
+    <nav class="nav-inner" aria-label="Навигация по странице">
+      <a class="nav-link active" href="#hero" aria-label="Главная">01<span>Главная</span></a>
+      <a class="nav-link" href="#about" aria-label="Обо мне">02<span>Обо мне</span></a>
+      <a class="nav-link" href="#skills" aria-label="Навыки">03<span>Навыки</span></a>
+      <a class="nav-link" href="#experience" aria-label="Опыт">04<span>Опыт</span></a>
+      <a class="nav-link" href="#projects" aria-label="Проекты">05<span>Проекты</span></a>
+      <a class="nav-link" href="#contact" aria-label="Контакты">06<span>Контакты</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker"><span>Юлия Карабасова</span> Frontend Developer · React / TypeScript</p>
+          <h1>Проектирую и запускаю <span class="hero-highlight">сложные веб‑продукты</span> на React</h1>
+          <p class="hero-description">
+            Frontend-разработчик с <strong>fullstack-бэкграундом</strong>. Создаю корпоративные системы, контентные платформы и Mini Apps полного цикла — от архитектуры и API-интеграции до деплоя и развития продукта.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="#projects">Смотреть проекты</a>
+            <a class="button button-secondary" href="Резюме_Карабасова.pdf" download>Скачать резюме</a>
+          </div>
+          <div class="hero-meta" aria-label="Ключевые сведения">
+            <span>3,5+ года опыта</span>
+            <span>Frontend focus</span>
+            <span>Нижний Новгород · удаленно</span>
+          </div>
+        </div>
+
+        <div class="hero-showcase" aria-label="Визуальная демонстрация продуктового опыта">
+          <div class="showcase-glow"></div>
+          <div class="product-window" aria-hidden="true">
+            <div class="product-bar">
+              <div class="product-dots"><i></i><i></i><i></i></div>
+              <span class="product-label">PRODUCT WORKSPACE</span>
+            </div>
+            <div class="product-body">
+              <aside class="product-sidebar">
+                <span class="side-logo"></span>
+                <span class="side-line active"></span>
+                <span class="side-line"></span>
+                <span class="side-line"></span>
+                <span class="side-line"></span>
+              </aside>
+              <div class="product-main">
+                <div class="product-heading"><strong>Рабочее пространство</strong><span class="product-avatar"></span></div>
+                <div class="product-grid">
+                  <div class="product-card-mini"><span class="mini-tag"></span><div class="mini-line"></div><div class="mini-line short"></div></div>
+                  <div class="product-card-mini"><span class="mini-tag rose"></span><div class="mini-line"></div><div class="mini-line short"></div></div>
+                  <div class="product-card-mini wide"><span class="mini-tag sage"></span><div class="mini-chart"><i style="height:42%"></i><i></i><i></i><i></i><i></i></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-proof proof-a"><strong>20+</strong><span>внутренних сервисов</span></div>
+          <div class="floating-proof proof-b"><strong>3 продукта</strong><span>запущены в эксплуатацию</span></div>
+          <div class="floating-proof proof-c"><strong>Full-cycle</strong><span>архитектура → релиз</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Обо мне</p>
+          <h2>Разрабатываю не отдельные экраны, а работающие продукты</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="portrait-card reveal" aria-label="Место для профессиональной фотографии">
+            <img src="assets/images/profile.jpg" alt="Юлия Карабасова">
+          </div>
+
+          <div class="about-copy reveal">
+            <p>
+              Frontend-разработчик с 3,5+ годами коммерческого опыта разработки веб-приложений на React и TypeScript и fullstack-бэкграундом. Специализируюсь на frontend-архитектуре и сложных пользовательских интерфейсах, при этом понимаю полный путь данных: REST API, серверную бизнес-логику, авторизацию, базы данных и деплой.
+            </p>
+            <p>
+              Самостоятельно реализовала несколько крупных веб-приложений и более 20 внутренних сервисов. Работала с корпоративными системами, документооборотом, контентными платформами, генерацией PDF и Word, Telegram Mini Apps и VK Mini Apps. Умею переводить бизнес-задачи в понятные пользовательские сценарии и технические решения.
+            </p>
+            <p>
+              В работе ценю ясную архитектуру, предсказуемое состояние интерфейса, переиспользуемые компоненты и аккуратное взаимодействие frontend с backend. Провожу code review и использую AI-инструменты как средство ускорения разработки, сохраняя ответственность за качество итогового кода.
+            </p>
+
+            <div class="facts">
+              <div class="fact"><strong>Специализация</strong><span>React / TypeScript / SPA</span></div>
+              <div class="fact"><strong>Формат работы</strong><span>Удаленно / гибрид</span></div>
+              <div class="fact"><strong>Домены</strong><span>Corporate · Finance · EdTech</span></div>
+              <div class="fact"><strong>Позиционирование</strong><span>Frontend focus · Fullstack background</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats" aria-label="Ключевые показатели опыта">
+      <div class="container stat-grid">
+        <div class="stat-card reveal"><span class="stat-value" data-counter="3.5">3,5+</span><span class="stat-label">года коммерческого опыта</span></div>
+        <div class="stat-card reveal"><span class="stat-value" data-counter="3">3</span><span class="stat-label">крупных продукта запущено</span></div>
+        <div class="stat-card reveal"><span class="stat-value" data-counter="20">20+</span><span class="stat-label">внутренних сервисов интегрировано</span></div>
+        <div class="stat-card reveal"><span class="stat-value" data-counter="2">2</span><span class="stat-label">Mini App платформы</span></div>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Навыки</p>
+          <h2>Стек, которым я решаю продуктовые задачи</h2>
+          <p class="lead">Nехнологии и направления, применявшиеся в работе.</p>
+        </div>
+
+        <div class="skill-groups">
+          <article class="skill-card reveal">
+            <h3>Core Frontend</h3>
+            <div class="chips">
+              <span class="chip">React 18/19</span><span class="chip">TypeScript</span><span class="chip">JavaScript ES2022+</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">SCSS</span><span class="chip">CSS Modules</span><span class="chip">Tailwind CSS</span><span class="chip">Vite</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>State & Data</h3>
+            <div class="chips">
+              <span class="chip">Redux Toolkit</span><span class="chip">RTK Query</span><span class="chip">React Context</span><span class="chip">REST API</span><span class="chip">JWT Authentication</span><span class="chip">React Router</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>UI & Product Interfaces</h3>
+            <div class="chips">
+              <span class="chip">Yup</span><span class="chip">Ant Design</span><span class="chip">Responsive Design</span><span class="chip">dnd-kit</span><span class="chip">Markdown</span><span class="chip">Recharts</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>Backend Experience</h3>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">Django</span><span class="chip">Django REST Framework</span><span class="chip">Flask</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Celery</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>Platforms & Delivery</h3>
+            <div class="chips">
+              <span class="chip">Git</span><span class="chip">Docker</span><span class="chip">Telegram Mini Apps SDK</span><span class="chip">Linux</span><span class="chip">Code Review</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Опыт работы</p>
+          <h2>Frontend / Fullstack Developer</h2>
+          <p class="lead">Разработка внутренних корпоративных и коммерческих веб-приложений для компании в сфере оценочной, финансовой и строительной экспертизы.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Frontend / Fullstack Developer</h3>
+                  <p class="muted">Компания в сфере оценки, финансовой и строительной экспертизы</p>
+                </div>
+                <span class="period">2022 — настоящее время</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Разрабатываю SPA на React и TypeScript и самостоятельно принимаю архитектурные решения для новых приложений.</li>
+                <li>Выполняю полный цикл frontend-разработки: настройка проекта, интерфейсы, интеграция с backend, деплой и сопровождение.</li>
+                <li>Интегрировала более 20 внутренних сервисов в единый корпоративный портал с общей системой авторизации.</li>
+                <li>Разрабатывала сложные формы, редакторы контента, drag-and-drop интерфейсы, предпросмотр и генерацию документов.</li>
+                <li>Реализовывала backend-функциональность на Python: REST API, серверную бизнес-логику, работу с PostgreSQL и внешними интеграциями.</li>
+                <li>Провожу code review, поддерживаю единые принципы организации кода и взаимодействую с разработчиками и бизнес-заказчиками.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Ключевые достижения</h3>
+                  <p class="muted">Результаты, которые лучше всего отражают уровень ответственности</p>
+                </div>
+              </div>
+              <ul class="bullet-list">
+                <li>Самостоятельно разработала и вывела в эксплуатацию три крупных веб-приложения.</li>
+                <li>Автоматизировала подготовку коммерческих и рабочих документов, сократив объем ручного оформления и риск ошибок.</li>
+                <li>Создала собственный визуальный редактор публикаций с Markdown и управлением блоками контента.</li>
+                <li>Разработала образовательный продукт одновременно для Telegram Mini Apps и VK Mini Apps.</li>
+                <li>Реализовала игры 2048 и Flappy Bird средствами React без игровых движков.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Проекты</p>
+          <h2>Ключевые продуктовые кейсы</h2>
+          <p class="lead">Проекты, которые я самостоятельно или с высокой степенью ownership доводила от технической концепции до работающего продукта.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-visual" aria-label="Демонстрационный макет корпоративного портала">
+              <span class="project-index">01</span>
+              <div class="mock-window">
+                <img src="assets/images/projects/corporate-portal/portal-main.png" alt="Главная страница корпоративного портала" loading="lazy">
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-meta">Corporate Platform · Internal Tools · Document Automation</p>
+              <h3>Корпоративный портал</h3>
+              <p>Единое рабочее пространство, объединившее более 20 внутренних веб-сервисов, документы, новости и инструменты сотрудников.</p>
+              <ul class="bullet-list">
+                <li>Единая авторизация, каталог сервисов, поиск, фильтры и избранное.</li>
+                <li>Хранение и предпросмотр документов различных форматов.</li>
+                <li>Новостной портал с публикациями, комментариями и реакциями.</li>
+                <li>Конструктор коммерческих предложений со сбором стилизованного PDF из пользовательских блоков.</li>
+                <li>Конструктор Word-документов из пользовательских блоков.</li>
+              </ul>
+              <div class="project-impact"><strong>Бизнес-эффект:</strong> сотрудники получили единое рабочее пространство, а автоматизация оформления документов сократила ручные операции и количество ошибок.</div>
+              <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">RTK Query</span><span class="chip">JWT</span><span class="chip">PDF / DOCX</span></div>
+              <!-- ЗАМЕНИТЕ # на ссылку на подробный кейс -->
+              <a class="project-link">Скоро здесь будет ссылка →</a> <!-- Подробнее о проекте-->
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual" aria-label="Демонстрационный макет финансового портала">
+              <span class="project-index">02</span>
+              <div class="mock-window">
+                <img src="assets/images/projects/financial-portal/financial-main.png" alt="Главная страница финансового портала" loading="lazy">
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-meta">Finance · Content Platform · Custom Editor</p>
+              <h3>Финансовый портал</h3>
+              <p>Коммерческий веб-продукт для аудиторов, арбитражных управляющих и владельцев бизнеса с обширной информацией о компаниях и контентной платформой.</p>
+              <ul class="bullet-list">
+                <li>Карточка компании в формате длинного структурированного лендинга.</li>
+                <li>Динамическое оглавление с отслеживанием активного раздела.</li>
+                <li>Собственный редактор статей с поддержкой Markdown.</li>
+                <li>Изменение порядка и структуры контентных блоков.</li>
+                <li>Адаптивная Bento-сетка публикаций.</li>
+              </ul>
+              <div class="project-impact"><strong>Бизнес-эффект:</strong> редакторы получили возможность самостоятельно создавать и перестраивать публикации без знания разметки и участия разработчиков.</div>
+              <div class="chips"><span class="chip">React</span><span class="chip">Markdown</span><span class="chip">dnd-kit</span><span class="chip">Responsive UI</span></div>
+              <a class="project-link">Скоро здесь будет ссылка →</a> <!-- Подробнее о проекте-->
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-visual" aria-label="Демонстрационный макет образовательной Mini App">
+              <span class="project-index">03</span>
+              <div class="mock-window">
+                <img src="assets/images/projects/vk-mini-app/mini-app-main.png" alt="Главная страница VK Mini App" loading="lazy">
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-meta">EdTech · Telegram Mini Apps · VK Mini Apps</p>
+              <h3>Образовательная Mini App</h3>
+              <p>Платформа по финансовой грамотности для школьников, разработанная совместно с некоммерческим проектом и используемая как образовательный и маркетинговый инструмент.</p>
+              <ul class="bullet-list">
+                <li>Полный самостоятельный цикл: архитектура, настройка, интерфейсы и деплой.</li>
+                <li>Интеграция Telegram Mini Apps SDK и VK Bridge.</li>
+                <li>Уроки, статьи, видеоплеер, тесты и квизы с пояснениями.</li>
+                <li>Игровые механики и отдельные игры 2048 и Flappy Bird.</li>
+              </ul>
+              <div class="project-impact"><strong>Бизнес-эффект:</strong> единый образовательный продукт стал доступен внутри двух социальных платформ без установки отдельного приложения.</div>
+              <div class="chips"><span class="chip">React</span><span class="chip">Telegram SDK</span><span class="chip">VK Bridge</span><span class="chip">Game Logic</span></div>
+              <a class="project-link">Скоро здесь будет ссылка →</a> <!-- Подробнее о проекте-->
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Подход к работе</p>
+          <h2>Что я привношу в команду</h2>
+        </div>
+        <div class="value-grid">
+          <article class="value-card reveal"><div class="value-number">01</div><h3>Ownership</h3><p>Беру ответственность за решение целиком: от уточнения задачи и архитектуры до релиза и поддержки.</p></article>
+          <article class="value-card reveal"><div class="value-number">02</div><h3>Архитектура</h3><p>Проектирую структуру SPA, разделяю ответственность модулей и строю переиспользуемые интерфейсные решения.</p></article>
+          <article class="value-card reveal"><div class="value-number">03</div><h3>Бизнес-фокус</h3><p>Оцениваю результат через пользовательский сценарий, скорость операций и снижение ручной работы.</p></article>
+          <article class="value-card reveal"><div class="value-number">04</div><h3>Коммуникация</h3><p>Работаю с backend, аналитиками и бизнес-заказчиками, аргументирую решения и провожу code review.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="reveal" style="text-align: center;">
+          <p class="eyebrow">Контакты</p>
+
+          <div class="social-links" aria-label="Контакты">
+            <a
+              class="social-link"
+              href="mailto:yuliak2001@yandex.ru"
+              aria-label="Написать на Email"
+              title="Email"
+            >
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://t.me/julia_karabasova"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Открыть Telegram"
+              title="Telegram"
+            >
+              <i class="bi bi-telegram" aria-hidden="true"></i>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://github.com/juliakarabasova"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Открыть GitHub"
+              title="GitHub"
+            >
+              <i class="bi bi-github" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Юлия Карабасова. Основано на шаблоне <a href="https://bootstrapmade.com/free-html-bootstrap-template-my-resume/" target="_blank" rel="noopener noreferrer">MyResume by BootstrapMade</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navigation = document.querySelector('.side-nav');
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+
+    menuButton?.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.textContent = isOpen ? '×' : '☰';
+      menuButton.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      navigation.classList.remove('open');
+      menuButton?.setAttribute('aria-expanded', 'false');
+      if (menuButton) menuButton.textContent = '☰';
+    }));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => sectionObserver.observe(section));
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const typed = document.querySelector('.typed');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (typed && !reducedMotion) {
+      const items = typed.dataset.items.split('|');
+      let itemIndex = 0;
+      let charIndex = items[0].length;
+      let deleting = true;
+
+      const typeLoop = () => {
+        const current = items[itemIndex];
+        if (deleting) {
+          charIndex--;
+          typed.textContent = current.slice(0, Math.max(charIndex, 0));
+          if (charIndex <= 0) {
+            deleting = false;
+            itemIndex = (itemIndex + 1) % items.length;
+            setTimeout(typeLoop, 350);
+            return;
+          }
+        } else {
+          charIndex++;
+          typed.textContent = items[itemIndex].slice(0, charIndex);
+          if (charIndex >= items[itemIndex].length) {
+            deleting = true;
+            setTimeout(typeLoop, 1600);
+            return;
+          }
+        }
+        setTimeout(typeLoop, deleting ? 42 : 68);
+      };
+      setTimeout(typeLoop, 1500);
+    }
+  </script>
+</body>
+</html>
